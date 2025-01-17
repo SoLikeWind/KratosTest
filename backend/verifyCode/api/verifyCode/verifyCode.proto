@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package api.verifyCode;
+
+import "google/api/annotations.proto";
+
+// 生成的go代码所在的包
+option go_package = "verifyCode/api/verifyCode;verifyCode";
+option java_multiple_files = true;
+option java_package = "api.verifyCode";
+
+service VerifyCode {
+//	rpc CreateVerifyCode (CreateVerifyCodeRequest) returns (CreateVerifyCodeReply);
+//	rpc UpdateVerifyCode (UpdateVerifyCodeRequest) returns (UpdateVerifyCodeReply);
+//	rpc DeleteVerifyCode (DeleteVerifyCodeRequest) returns (DeleteVerifyCodeReply);
+
+	// 定义 VerifyCode 服务
+	rpc GetVerifyCode (GetVerifyCodeRequest) returns (GetVerifyCodeReply) {
+		option (google.api.http) = {
+			post:"/verifycode"
+			body:"*"
+		};
+	}
+//	rpc ListVerifyCode (ListVerifyCodeRequest) returns (ListVerifyCodeReply);
+}
+
+//message CreateVerifyCodeRequest {}
+//message CreateVerifyCodeReply {}
+//
+//message UpdateVerifyCodeRequest {}
+//message UpdateVerifyCodeReply {}
+//
+//message DeleteVerifyCodeRequest {}
+//message DeleteVerifyCodeReply {}
+
+enum TYPE {
+	DEFAULT = 0;	//默认
+	DIGIT = 1;	//数字
+	LETIER = 2;	//字母
+	MIXED = 3;	//混合
+}
+
+// 接口请求参数结构
+message GetVerifyCodeRequest {
+	uint32 length = 1;	//长度为1（字段序号）
+	TYPE type = 2;	//类型为2
+	uint32 id = 3;
+}
+
+// 接口返回值参数结构
+message GetVerifyCodeReply {
+	string code = 1;
+	string success = 2;
+}
+
+//message ListVerifyCodeRequest {}
+//message ListVerifyCodeReply {}
