@@ -1,5 +1,5 @@
 # Kratos Project Template
-
+提交一下re，看看main有没有变化
 ## Install Kratos
 ```
 go install github.com/go-kratos/kratos/cmd/kratos/v2@latest
