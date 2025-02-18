@@ -22,7 +22,7 @@ type Customer struct {
 func init() {
 	// 一，建立数据库连接
 	// 参考 https://github.com/go-sql-driver/mysql#dsn-data-source-name 获取详情
-	dsn := "root:mashibing@tcp(127.0.0.1:3306)/laomadj_customer?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "root:123456@tcp(127.0.0.1:3306)/laomadj_customer?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatalln(err)
