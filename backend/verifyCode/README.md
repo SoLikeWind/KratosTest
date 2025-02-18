@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Kratos Project Template
 
 ## Install Kratos
@@ -49,3 +50,11 @@ docker build -t <your-docker-image-name> .
 docker run --rm -p 8000:8000 -p 9000:9000 -v </path/to/your/configs>:/data/conf <your-docker-image-name>
 ```
 
+=======
+# 验证码生成服务
+## 快速启动
+``` shell
+kratos run
+```
+## 独立部署方案
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e

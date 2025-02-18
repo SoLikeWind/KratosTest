@@ -6,10 +6,47 @@ info:
     title: Customer API
     version: 0.0.1
 paths:
+<<<<<<< HEAD
+=======
+    /customer/estimate-price/{origin}/{destination}:
+        get:
+            tags:
+                - Customer
+            description: 价格预估
+            operationId: Customer_EstimatePrice
+            parameters:
+                - name: origin
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+                - name: destination
+                  in: path
+                  required: true
+                  schema:
+                    type: string
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/EstimatePriceResp'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
     /customer/get-verify-code/{telephone}:
         get:
             tags:
                 - Customer
+<<<<<<< HEAD
+=======
+            description: 获取验证码
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
             operationId: Customer_GetVerifyCode
             parameters:
                 - name: telephone
@@ -30,20 +67,99 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/Status'
+<<<<<<< HEAD
 components:
     schemas:
+=======
+    /customer/login:
+        post:
+            tags:
+                - Customer
+            description: 登录
+            operationId: Customer_Login
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/LoginReq'
+                required: true
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/LoginResp'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+    /customer/logout:
+        get:
+            tags:
+                - Customer
+            description: 退出
+            operationId: Customer_Logout
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/LogoutResp'
+                default:
+                    description: Default error response
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Status'
+components:
+    schemas:
+        EstimatePriceResp:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    format: int64
+                message:
+                    type: string
+                origin:
+                    type: string
+                destination:
+                    type: string
+                price:
+                    type: integer
+                    format: int64
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
         GetVerifyCodeResp:
             type: object
             properties:
                 code:
                     type: integer
+<<<<<<< HEAD
                     format: int32
+=======
+                    format: int64
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
                 message:
                     type: string
                 verifyCode:
                     type: string
+<<<<<<< HEAD
                 verifyCodeTime:
                     type: integer
+=======
+                    description: 验证码
+                verifyCodeTime:
+                    type: integer
+                    description: 生成时间 unix timestamp
+                    format: int64
+                verifyCodeLife:
+                    type: integer
+                    description: 有效期，单位 second
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
                     format: int32
         GoogleProtobufAny:
             type: object
@@ -53,6 +169,44 @@ components:
                     description: The type of the serialized message.
             additionalProperties: true
             description: Contains an arbitrary serialized message along with a @type that describes the type of the serialized message.
+<<<<<<< HEAD
+=======
+        LoginReq:
+            type: object
+            properties:
+                telephone:
+                    type: string
+                verifyCode:
+                    type: string
+            description: 登录的消息
+        LoginResp:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    format: int64
+                message:
+                    type: string
+                token:
+                    type: string
+                    description: token,登录表示，特殊的字符串，JWT 编码格式
+                tokenCreateAt:
+                    type: integer
+                    description: 生成时间 unix timestamp
+                    format: int64
+                tokenLife:
+                    type: integer
+                    description: 有效期，单位 second
+                    format: int32
+        LogoutResp:
+            type: object
+            properties:
+                code:
+                    type: integer
+                    format: int64
+                message:
+                    type: string
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
         Status:
             type: object
             properties:

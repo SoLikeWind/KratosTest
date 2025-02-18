@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 FROM golang:1.19 AS builder
+=======
+FROM golang:1.16 AS builder
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
 
 COPY . /src
 WORKDIR /src

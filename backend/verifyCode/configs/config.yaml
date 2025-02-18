@@ -8,7 +8,11 @@ server:
 data:
   database:
     driver: mysql
+<<<<<<< HEAD
     source: root:root@tcp(127.0.0.1:3306)/test?parseTime=True&loc=Local
+=======
+    source: root:123456@tcp(127.0.0.1:3306)/verifycode?charset=utf8mb4&parseTime=True&loc=Local
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
   redis:
     addr: 127.0.0.1:6379
     read_timeout: 0.2s

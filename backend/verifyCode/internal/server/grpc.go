@@ -14,8 +14,13 @@ import (
 // NewGRPCServer new a gRPC server.
 func NewGRPCServer(c *conf.Server,
 	greeter *service.GreeterService,
+<<<<<<< HEAD
 	//增加需要使用的服务作为参数
 	verifyCodeService *service.VerifyCodeService,
+=======
+	// 增加需要使用的服务作为参数
+	verifyCoderService *service.VerifyCodeService,
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
 	logger log.Logger) *grpc.Server {
 	var opts = []grpc.ServerOption{
 		grpc.Middleware(
@@ -33,7 +38,12 @@ func NewGRPCServer(c *conf.Server,
 	}
 	srv := grpc.NewServer(opts...)
 	v1.RegisterGreeterServer(srv, greeter)
+<<<<<<< HEAD
 	//完成当前服务注册
 	verifyCode.RegisterVerifyCodeServer(srv, verifyCodeService) //将pb中独立的服务注册到集中grpc中
+=======
+	// 完成服务的注册：verifyCode
+	verifyCode.RegisterVerifyCodeServer(srv, verifyCoderService)
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
 	return srv
 }

@@ -3,6 +3,7 @@
 
 openapi: 3.0.3
 info:
+<<<<<<< HEAD
     title: VerifyCode API
     version: 0.0.1
 paths:
@@ -80,3 +81,10 @@ components:
             description: 'The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).'
 tags:
     - name: VerifyCode
+=======
+    title: ""
+    version: 0.0.1
+paths: {}
+components:
+    schemas: {}
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e

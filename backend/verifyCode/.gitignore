@@ -3,6 +3,10 @@
 *.exe
 *.exe~
 *.dll
+<<<<<<< HEAD
+=======
+*.so
+>>>>>>> f088d708a9cd6384c0a30c0669e6062431292c3e
 *.dylib
 
 # Test binary, built with `go test -c`
